@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Requred packages                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\RequirePackage{graphicx} 							% figures
+\RequirePackage{amsmath}  							% mathematical formulas
+\RequirePackage{amsfonts} 							% math fonts
+\RequirePackage{amssymb} 							% math symbols
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[latvian, russian, english]{babel}	% language stup
+\selectlanguage{english}
+\RequirePackage{bibentry} 							%for creating list of publications using separate entries from bibliography
+\RequirePackage{pdfpages} 							% to include pdf documents
+\RequirePackage{placeins} 							%\FloatBarrier - Dumps all remaining floats from a buffer, stopping for ex. a figure being shown in another section
+\RequirePackage{subcaption}
+\RequirePackage{color} 								% colored text
+\RequirePackage{caption} 							% to use \captionsetup https://tex.stackexchange.com/questions/22751/how-to-force-table-caption-on-top
+\RequirePackage{setspace}							% to use \captionsetup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    Packages                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{scrextend}                              %
+\usepackage{graphicx}                               %
+\usepackage{wrapfig}                                % Wrap images properly around text
+\usepackage{xurl}
+\usepackage{longtable}                              %
+\usepackage{multirow}                               %
+%\usepackage{todonotes}                             %
+\usepackage{hyperref}                             	% Make links clickable
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+%    filecolor=magenta,      
+%    urlcolor=cyan,
+%}
+\usepackage{float}                                  %
+\usepackage{blindtext}                              %
+\usepackage{chngcntr}
+\counterwithout{table}{chapter}						% Table numbering inwhole document
+\counterwithout{figure}{chapter}                    % Figure numbering inwhole document
+\counterwithout{footnote}{chapter}					% Fottnote numbering inwhole document
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[acronym,nonumberlist,nogroupskip,nopostdot,style=long]{glossaries} %https://tex.stackexchange.com/questions/228669/short-form-when-acronym-is-first-used-in-table
+\usepackage{svg}
+\usepackage{lastpage}
+\emergencystretch=1em                               % To prevent overfull hbox in \printbibliography
+\usepackage[final]{microtype}                       % To prevent overfull hbox in \printbibliography - option 2
+\usepackage{listings}								%
+\usepackage{times}                                  %
+\usepackage{underscore}								%
+\graphicspath{{./img/}} 							% image default directory
+\usepackage{lipsum}                     			% Dummytext
+\usepackage{xargs}                      			% Use more than one optional parameter in a 
+\usepackage{chngpage}
+\interfootnotelinepenalty=10000   					%http://www.texfaq.org/FAQ-splitfoot
+\renewcommand{\baselinestretch}{1.5}    			% distance between lines
+\usepackage{parskip}								% line after paragraph
+\setlength{\parindent}{2em}							% indentation of the paragraph
+\usepackage{xcolor}  								% Coloured text etc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Revision commands                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,size=\tiny,#1]{#2}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=red,backgroundcolor=yellow!25,bordercolor=red,size=\tiny,#1]{#2}}
+%\newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,size=\tiny,#1]{#2}}
+%\newcommandx{\improvement}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,size=\tiny,#1]{#2}}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Styling of document                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[inner=30mm,outer=20mm,top=20mm,bottom=20mm]{geometry} %distances from page borders
+\usepackage{times} 									% font family https://www.overleaf.com/learn/latex/Font_typefaces
+
+% captions of tables and figures
+\captionsetup{labelfont=it,textfont=it,font=footnotesize,belowskip=5pt,aboveskip=5pt}
+
+\setcounter{secnumdepth}{4}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Title formating (section, chapter etc)          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec} 								% https://tex.stackexchange.com/questions/68418/chapters-without-the-chapter-text-in-content
+
+\titleformat{\chapter}{\normalfont\fontsize{18pt}{18pt}\bfseries\scshape}{\thechapter}{1pc}{}
+
+\titleformat{\section}{\normalfont\fontsize{14pt}{14pt}\bfseries}{\thesection}{1pc}{}
+
+\titleformat{\subsection}{\normalfont\fontsize{12pt}{12pt}\bfseries}{\thesubsection}{1pc}{}

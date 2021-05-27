@@ -1,0 +1,72 @@
+\chapter{\textsc{Introduction}}\label{ch:introduction}
+
+The digital world nowadays is expanding with unprecedented speed. All fields of our lives are controlled and influenced by digital industries shaping them. This also applies to \gls*{iacs} or also called ICS/SCADA. \gls*{iacs} are devices that operate Critical Infrastructures (CI), such as, electrical grids, gas distribution grids, nuclear power plants, water treatment, transportation, heating plants, and many more. In general, these systems enable efficient automation of the physical processes that businesses, industries, and countries relay. For that reason, IACS is also called \gls*{cps} as they operate on physical structures. Typical characteristics of IACS systems are propitiatory protocols, isolated networks, and purpose-specific hardware. These systems have started to close the gap between traditional \gls*{it} systems by introducing \gls*{it} elements, networks, and ideologies. Therefore nowadays, most IACS components cannot exist without communication with different parts of the system. This development has made IACS a target to various adversaries. Moreover, some industrial and automation control systems include characteristics of \gls*{iot} devices that increase the attack surface even more.
+
+Each year IACS receives an increasing number of sophisticated and debilitating attacks, one of such attacks happened recently on February 5th, 2021, where actors gained access and seized control of drinking water treatment facilities in the USA \parencite{WEB-01-usa-water-treatement-atack}. Many similar incidents are widespread, and the most popular of them are Stuxnet, Duqu, Flame, BlackEnergy, Triton, Lazarus, and MuddyWater \parencite{01-surway, 68-kaspersky-ics-cert-apt-attacks-on-industrial-companies-in-2020-en}. Furthermore, an indicator that cyber-attacks and warfare are escalating in all fields is an increase in identified actors \parencite{WEB-02-fireeye-apt-list, WEB-03-mitre-apt-list}. The review \citetitle{68-kaspersky-ics-cert-apt-attacks-on-industrial-companies-in-2020-en} \parencite{68-kaspersky-ics-cert-apt-attacks-on-industrial-companies-in-2020-en} shows an increase in \gls*{apt} activity in the year 2020 targeted to IACS infrastructure and lists various attacks like Sofacy, PoetRAT, Mikroceen, Lazarus, SolarWinds, MuddyWater as few of the important ones. Kaspersky Labs report \parencite{67-kaspersky-threat-landscape-for-industrial-automation-systems-statistics-for-h2-2020-en} also confirmed a 62\% increase of attacks on IACS in the past year. The same report suggests that threats belonging to more than 5 thousand malware families were blocked on \gls*{iacs} workstations.
+
+Based on current trends, report \citetitle{66-kaspersky-thret-landscape} \parencite{66-kaspersky-thret-landscape} speculates that cybercriminals will increase unconventional attack scenarios and create new ways to monetize the attacks. As most upfront global danger for \gls*{iacs} is the end of support for widely used MS Windows 7 and MS Windows Server 2008, and also recently leaked Windows XP source code. \citeauthor{90-ics-statistics} \parencite{90-ics-statistics} has used search engine Shodan \footnote{Shodan - \url{https://www.shodan.io/}} to discover that in \gls*{iacs} MS Windows 7/8 is used in 51.56\% and Windows XP is used in 8.75\% of total workstations used in IACS. Hence, confirming the high usage of these OS. \citeauthor{66-kaspersky-thret-landscape} \parencite{66-kaspersky-thret-landscape} also mentions that an increase in ransomware attacks, cyber espionage, APT operation, and Covid19 consequences are on the rise.
+
+
+
+There is still little reported information about actual attacks on industrial infrastructure or scenarios executed by adversaries, despite the growing awareness of IACS cybersecurity\parencite{72-ics-atack-taxonomy}. To increase understanding and discover vulnerabilities in IT infrastructure, researchers create testbeds or cyber ranges to test attack and defense mechanisms in a controlled environment. \gls*{iacs} cyber ranges and testbed numbers are increasing as the trend of \gls*{iacs} security progresses. \citeauthor{17-SCADA-testbed} \parencite{17-SCADA-testbed} indicate that a literature vacuum exists around IACS cyber ranges, making them inaccessible for the broader community to gain more experience in the defense and offense of \gls*{iacs} components.
+
+
+
+Offensive capabilities are deliberate invasions into opponent systems to cause destruction, disruption, or damage. \citeauthor{53-NATO-role-of-offensi-cyber-capabilities} \parencite{53-NATO-role-of-offensi-cyber-capabilities} draws attention to how the lack of an utter offensive cyber capability affects NATO's ability to deter and defend. Therefore, offensive capabilities need to be developed as adversaries cannot be refuted by pure defense. In the author's opinion, the point is valid for any national state entity. However, national states' cybersecurity exercises are focused on defense, where immediate attention is to train blue team's defense response on red team's attacks. Thus exercises improving the readiness of red team's offensive capabilities are limited in scope and mostly not public. This signifies the need for an open and well-documented CR to allow the development of offensive capabilities.
+
+
+
+\section{Problem statement and objective}
+
+This master thesis addresses the problem in the field of cyber red team's offensive capability development. Only some of the nations as the UK, Netherlands, USA, Canada, and Australia have publicly expressed having offensive capabilities \parencite{94-nation-offensive-capabilities-ccdco, 91-netherlands-cyber-ofensive-capabiliteis, 92-UK-cyber-offensive}. However, the disclosed information is not detailed enough, making it impossible to understand their potential. Nonetheless, it is well known that in the past decade number of attacks by nation-state actors has steadily been on the rise \parencite{67-kaspersky-threat-landscape-for-industrial-automation-systems-statistics-for-h2-2020-en}. Thereby the problem addressed in the author's research is that \textit{red team offensive capabilities in the \gls*{iacs} field are yet to be closely studied to gain more insights into how \gls*{iacs} elements can be attacked and defended.} Current studies mainly focus on defensive capability development in the \gls*{iacs} field, which is understandable, considering that blue team defenses need to be up-to-date and on full alert to counter adversary attacks. However, research and reports point out that national states should maintain offensive capabilities as a political tool to deter any tensions directed at themselves or allayed countries. If necessary, offensive capabilities can be used to respond to aggressors with destructive power. Additionally, report  \citetitle{53-NATO-role-of-offensi-cyber-capabilities} \parencite{53-NATO-role-of-offensi-cyber-capabilities} mentions that modern warfare cannot exist without \gls*{ew} support. In addition from governments, offensive capabilities are necessary for companies utilizing \gls*{iacs}, as they need to know how to test and protect their infrastructure.
+
+Based on the problem, the objective of the master thesis is to develop the \gls*{iacs} \gls*{cr}, where the red team can practice developing offensive capabilities. \gls*{cr} need to encompass the following key aspects:
+
+\begin{itemize}
+	\item realistic;
+	\item easy reproducible;
+	\item with publicly available documentation;
+	\item supporting multi-stage attack scenarios.
+\end{itemize}
+
+The created \gls*{cr} can be used to create exercises for red team offensive capability development in the \gls*{iacs} field, thereby improving understanding of \gls*{iacs} red team tactics and techniques. Understanding red team's capabilities also provides knowledge on how to defend \gls*{iacs}. The author intends that private or government entities can utilize this \gls*{cr} for exercises to develop offensive capabilities by any means is suitable for them.
+
+
+\section{Research questions}
+
+In this thesis following \gls*{rq} are addressed:
+
+\begin{enumerate}
+	
+	\item What are the main objectives IACS cyber ranges and testbeds are created for? \label{rq:1}
+	
+	\item  What are the \gls*{iacs} cyber range development criteria? \label{rq:2}
+	
+	\item How \gls*{iacs} cyber rages are built to resemble realistic systems? \label{rq:3}
+\end{enumerate}
+
+The answers to these three RQ's are used to propose tentative means of constructing a high fidelity, easily reproducible IACS CR meant for red team offensive capability development.
+
+\section{Research scope}
+
+The scope of the research includes: 
+\begin{enumerate}
+	\item Review of previous \gls*{iacs} \gls*{cr} and testbed research;
+	\item Development of the \gls*{iacs} \gls*{cr} based on thesis objective;
+	\item Created \gls*{iacs} \gls*{cr} usage in exercises for red team offensive capability development. 
+\end{enumerate}
+
+
+\section{Road map}
+
+Work will be structured as follows:  
+
+\begin{itemize}
+	\item Background and related work - explains the essential background of IACS system cyber-security and studies related work done in \gls*{iacs} \gls*{cr} and testbed fields. This chapter also describes cyber operations with emphasis on offensive operations;
+	
+	\item \gls*{iacs} \gls*{cr} design - describes the development of \gls*{iacs} \gls*{cr}, used components, and operating principles. Design of \gls*{cr} are also available publicly in GitHub\footnote{frostyICS - \gls*{iacs} \gls*{cr} for offensive capability development ( \href{https://github.com/austrisu/frostyICS}{https://github.com/austrisu/frostyICS})};
+	
+	\item Attack design - describes conducted offensive cybersecurity exercise utilizing IACS \gls*{cr}. This chapter describes attack scenario, possible attack vectors, and exercise execution steps;
+	
+	\item Economic justification - explains potential markets where the solution can be used together with an approximate cost of the \gls*{cr}.
+\end{itemize}

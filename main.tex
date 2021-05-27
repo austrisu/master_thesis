@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   Compiling                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% pdflatex thesis.tex
+% bibtex thesis
+% makeglossaries thesis
+% pdflatex thesis.tex
+% pdflatex thesis.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              BEGIN OF DOCUMENT CLASS              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper]{report}
+\usepackage{va} %style import
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    These can be used for revision process         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand\todo[1]{\textcolor{red}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            user-defined variables                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\doctitle}{Master Thesis}
+\newcommand{\me}{Austris Uljāns}
+\newcommand{\studentcode}{KI19006}
+\newcommand{\university}{VALMIERA UNIVERSITY OF APPLIED SCIENCES}
+\newcommand{\institute}{Institute of engineering}
+\newcommand{\titleName}{Industrial and automation control system cyber range for offensive capability development}
+\newcommand{\supervisor}{Bernhards Blumbergs}
+\newcommand{\supervisortitle}{Dr.comp.sc. }
+\newcommand{\Year}{2021}
+\author{\me}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    GLOSARIES                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      BIB                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+backend=biber,
+style=apa,  % if deleted ieee is default
+sorting=nyt
+]{biblatex}
+\addbibresource{bib/lib.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    BEGIN DOC                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Titlepage, anotation, table of content etc.     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/titlepage.tex}
+\tableofcontents
+\input{chapters/anotations/an-LV.tex}
+\input{chapters/anotations/an-EN.tex}
+\input{chapters/ack.tex}
+
+%%Print the glossary
+\input{chapters/gls.tex}
+\printglossary[type=\acronymtype]
+\addcontentsline{toc}{chapter}{ACRONYMS}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          Defining popular abreviations            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\glsadd{ip}
+\glsadd{s7}
+\glsadd{dnp3}
+\glsadd{ftp}
+\glsadd{ssh}
+\glsadd{icmp}
+\glsadd{arp}
+\glsadd{cve}
+\glsadd{http}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    Main thesis START              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/core/ch1.tex}
+\input{chapters/core/ch2.tex}
+\input{chapters/core/ch3.tex}
+\input{chapters/core/ch4.tex}
+\input{chapters/core/ch5.tex}
+\input{chapters/core/ch6.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    Main thesis END                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoffigures 
+\addcontentsline{toc}{chapter}{LIST OF FIGURES} 
+
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES} 
+
+
+\printbibliography
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+
+
+\input{chapters/appx2.tex}
+
+\end{document}
+

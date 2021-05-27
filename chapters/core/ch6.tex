@@ -1,0 +1,104 @@
+\chapter{\textsc{Conclusion}} \label{ch:conclusion}
+
+The general direction of the master thesis is to create the mobile IACS cyber range prototype where the red team can practice developing offensive capabilities. Cyber range should encompass the following key aspects:
+
+\begin{itemize}
+	\item realistic;
+	\item easily reproducible;
+	\item with publicly available documentation;
+	\item supporting multi-stage attack scenarios.
+\end{itemize}
+
+The created cyber range can be used in red team offensive capability development exercises in the IACS field, thereby improving understanding of IACS red team tactics and techniques. Understanding red team capabilities also provides knowledge on how to defend IACS. The author intends that individuals and private or government entities can utilize this CR for offensive exercises development by any suitable means. Using created CR, the author has developed and conducted a red team offensive exercise, which was described in chapter \ref{ch:attack-design}
+
+
+Based on the literature review, IACS testbed and CR development will continue to be essential in cybersecurity research, as CRs can facilitate research about attack surfaces in the IACS segment. However, despite numerous studies in this area, there is a lack of openly documented CR projects, especially in physical testbed areas. This affects the academic, business, and government sectors.  
+
+\section{Answering research questions}
+
+\textit{RQ1: What are the main objectives IACS cyber ranges and testbeds are created for?} Based on literature review (see Sec. \ref{sec:lit-rev}), CR objectives are intrusion detection system evaluation and testing, assessment of attack impact on physical systems, training to help beginners to overcome the barrier of proprietary IACS systems, test new security mechanisms, offensive and defensive operation training, and for use in CTF events. The author has chosen to build IACS cyber range to support offensive capability development in the IACS field as the topic of offensive capabilities is gaining popularity. Already some countries have openly stated that they have offensive capabilities. Furthermore, as the IACS infrastructure includes more general-purpose and standardized elements, protocols, and topologies, adversary interest in IACS is growing. Hence, public and private entities will need to have offensive capabilities to perform responsive operations against adversaries. Also, the private segment needs to create offensive capabilities to test their IACS systems to prevent future attacks. This RQ is observed in section \ref{subsec:objectives-purpose-reqeurements}
+
+\textit{RQ2: What are the IACS cyber range development criteria for CR to be used in offensive exercises?} The main development criteria for testbeds and CR is repeatability, fidelity, safe execution, diverse physical process, legacy device incorporation, support of standard protocols, ease of deployment. This master thesis CR emphasizes on fidelity, repeatability, support of standard protocols, and ease of deployment. This RQ is viewed in section \ref{subsec:objectives-purpose-reqeurements}
+
+\textit{RQ3: How to build IACS cyber rages to resemble realistic systems?} Identified characteristics to build a realistic CR include hardware IACS components from different vendors and controlled physical processes, which should create complex scenarios where physical processes influence one another.  Most of the current research limits testbeds and cyber ranges with communication-based vulnerabilities and does not focus on the controlled physical system. Considering this research limitation, the author has tried to encompass the following aspects into the CR to increase real system resemblance:
+
+\begin{itemize}
+	\item CR encompasses both physical and virtual components, where physical components increase systems fidelity and virtualized elements allow for the testbed to be easy to recreate, as well as reduce cost;
+	
+	\item The controlled physical process includes two physical systems, where the heating plant has interdependent physical processes.
+\end{itemize}
+
+This RQ is observed in chapter \ref{ch:cr-design}
+
+\section{Evaluation of cyber range}
+
+The author divides the evaluation of the created CR into three parts: 1) support by companies and organizations, 2) cyber range feedback from exerciser participants, 3) covered identified gaps. In the study, the author interprets evaluation as system analysis without specific criteria based on collected feedback described in section \ref{sec:excerisse-conclusion} and personal experience. 
+
+\subsection{Support of companies and organizations}
+
+In the author's opinion, one way to measure the relevance of the conducted research is by asking principal acknowledgment in the form of a support letter from the industry. Therefore, the author has asked multiple Latvian organizations and institutions involved with critical infrastructures and the IACS field for conceptual acknowledgment. Following is the list of companies and organizations that recognize the research topic as important and justify the work's practical significance. Support letters are included in  \hyperlink{page.82}{Appendix I}:
+
+\begin{itemize}
+	\item Vidzemes University of Applied Sciences;
+	\item Riga Technical University;
+	\item National Guard Cyber Defense Unit;
+	\item SIA "Latvijas Mobīlai Telefons";
+	\item Siemens OY Latvian branch;
+	\item CERT.LV;
+	\item AS "Latvenergo";
+	\item AS "Gaso".
+\end{itemize}
+
+
+\subsection{CR feedback from exerciser participants}
+
+One of the main goals for creating IACS CR was to provide an environment for practicing offensive capabilities where participants can attempt to attacks on IACS elements and observe their impact. For that reason, the author has developed an exercise using the scenario described in section \ref{ch:attack-design}. After the exercise, participants were asked to give feedback in the form of pull about the usefulness and usability of the developed CR. The summary of pull is showed in \hyperlink{page.91}{Appendix II}. 
+
+The exercise was conducted once, and during the executed scenario, five participants took part and performed attacks to achieve intended attack objectives. In the author's opinion, a number of participants for this research was sufficient as they should be from a specific target audience with particular knowledge and skillsets about cybersecurity and IACS.
+
+Feedback polls are shown in \hyperlink{page.91}{Appendix II}. A feedback poll consists of four questions that can be graded on a scale from one to five, where 1 - very bad, 2 - bad, 3 - satisfactorily, 4 - good, 5 - very good. 
+
+Feedback form questions and their description in respective order is:
+
+\begin{enumerate}
+	\item Were the tasks and achievable results understandable? - to understand whether the attack scenario was clear and understandable;
+	
+	\item Does this exercise help to understand industrial control systems better? - to understand whether participants have new insights into attack scenarios in IACS networks; 
+	
+	\item Did this cyber range increase knowledge about cybersecurity risks in IACS systems? - to understand how much information participants learned;
+	
+	\item Is the knowledge provided useful? - to understand whether participants can apply gained knowledge in the future. 
+\end{enumerate}
+
+
+Based on the participant's feedback grade exercise grade was 4.6. Thus, the author can conclude that created CR is a good environment where participants can experiment and practice developing offensive capabilities in the IACS field.
+
+\subsection{Covered identified gaps}
+
+Identified gaps during the literature review and the author's personal opinions are used for the final evaluation how the created IACS CR covers them.
+
+
+One identified gap was the lack of detailed documentation providing the means to reproduce physical IACS CR easily. In the author's opinion, this research fulfills this statement as this master thesis \LaTeX source code, complete documentation together with PLCs and SCADAs configurations is available publicly in GitHub \footnote{frostyICS - IACS cyber range for offensive capability development (\url{https://github.com/austrisu/frostyICS})} \footnote{Master thesis \LaTeX source code - (\url{https://github.com/austrisu/master_thesis})}  to replicate the CR.
+
+
+The second identified gap was the lack of CRs meant for offensive exercise development.  This research not just creates CR for single-use. The author has created and published documentation, configuration files,  exercise material, and this master thesis itself to be accessible for everyone publicly, hence increasing possibility to develop upon this research. In the author's opinion, these actions cover the identified gap as well as possible.
+
+
+The last identified gap was portability, meaning IACS CR should be easily to move from one place to another and relatively easy to assemble and disassemble. During the exercise time to set up five sets of CRs took around three hours. In the author's opinion, this time is reasonable to consider created CR portable.
+
+
+\section{Future work}
+
+In a final summary, based on the conducted research, the author suggests directions for future research:
+
+\begin{itemize}
+	\item CR for offensive capability development should also include security elements, such as, honeypots, intrusion detection systems, and similar elements, in order to increase the difficulty and create even more realistic scenarios;
+	
+	\item CR should include even more modern and up-to-date protocols;
+	
+	\item Increasing the size of the IACS CR by introducing additional virtualized components will keep the low cost of the testbed and increase complexity. Hence, allowing for a wider vulnerability surface. The possible solution is to add virtualized IACS testbed like GRFICS \parencite{39-grfics-scada-simulator} to the author's created CR;
+	
+	\item Test MitM attack against SCADA and WEB-SCADA;
+\end{itemize}
+
+The author's plans for this research are to rewrite this thesis for conference publication within the year and propose introducing this CR into the university's study curriculum.
